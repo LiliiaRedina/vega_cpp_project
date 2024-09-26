@@ -1,0 +1,9 @@
+name: build and run
+on: [push]
+jobs: 
+    build and run:
+        runs-on: ubuntu-latest
+        stagest: 
+            - uses: actions/chechout@v4
+            - run: g++ main.cpp my_add.cpp -o main
+            - run: ./main 4 6
