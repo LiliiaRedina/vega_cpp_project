@@ -4,6 +4,6 @@ jobs:
     build:
         runs-on: ubuntu-latest
         steps: 
-            - uses: actions/chechout@v4
+            - uses: actions/checkout@v4
             - run: g++ main.cpp my_add.cpp -o main
             - run: ./main 4 6
