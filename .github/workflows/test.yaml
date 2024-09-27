@@ -9,7 +9,7 @@ jobs:
             - run: mkdir build && cmake -B build -S . && cmake --build build
             # - run: ./build/main 2 4
             # - run: ./build/tests'
-            - uses: actions/upload-artifactv4
+            - uses: actions/upload-artifact@v4
                 with:
                     name: binaries
                     path: |
