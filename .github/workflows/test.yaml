@@ -19,7 +19,7 @@ jobs:
     tests:
         runs-on: ubuntu-latest
         steps: 
-            - uses: actions/download-artifactv4
+            - uses: actions/download-artifact@v4
                 with:
                     name: binaries
             - run: chmod +x tests && ./tests
@@ -27,7 +27,7 @@ jobs:
     run:
         runs-on: ubuntu-latest
         steps: 
-            - uses: actions/download-artifactv4
+            - uses: actions/download-artifact@v4
                 with:
                     name: binaries
             - run: chmod +x tests && ./main 35 67
