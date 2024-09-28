@@ -23,7 +23,7 @@ FetchContent_MakeAvailable(googlebenchmark)
 
 enable_testing()
 add_executable(tests test_add.cpp src/my_add.cpp)
-add_executable(my_benchmark benchmarks/benchmark_main.cpp)
+add_executable(my_benchmark benchmarks/benchmark_main.cpp src/my_add.cpp)
 target_link_libraries(tests gtest_main)
 target_link_libraries(my_benchmark PRIVATE benchmark::benchmark)
 

@@ -1,18 +1,15 @@
 #include <benchmark/benchmark.h>
 
-static void BM_StringCreation(benchmark::State& state) {
-    for (auto _ : state) {
-        std::string empty_string;
-    }
-}
-BENCHMARK(BM_StringCreation);
+#include "my_add.hpp"
 
-static void BM_StringCopy(benchmark::State& state) {
-    std::string x = "hello";
+static void BM_MyAdd(benchmark::State& state) {
+    int a = 55;
+    int b = 66;
     for (auto _ : state) {
-        std::string copy(x);
+        benchmark::DoNotOptimize(my_add(a, b));
     }
 }
-BENCHMARK(BM_StringCopy);
+
+BENCHMARK(BM_MyAdd);
 
 BENCHMARK_MAIN();
